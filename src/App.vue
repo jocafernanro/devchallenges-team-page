@@ -1,6 +1,6 @@
 <template>
-  <div id="app">
-    Hola!
+  <div id="app" class="w-2/3 mx-auto max-w-6xl">
+    <NavbarComponent></NavbarComponent>
     <div class="grid grid-cols-3 grid-rows-2 gap-4">
       <MemberComponent
         v-for="(member, index) in members"
@@ -8,16 +8,21 @@
         :member="member"
       ></MemberComponent>
     </div>
+    <FooterComponent></FooterComponent>
   </div>
 </template>
 
 <script>
 import MemberComponent from "@/components/MemberComponent.vue";
+import NavbarComponent from "@/components/NavbarComponent.vue";
+import FooterComponent from "@/components/FooterComponent.vue";
 
 export default {
   name: "App",
   components: {
     MemberComponent,
+    NavbarComponent,
+    FooterComponent,
   },
   data: function() {
     return {
@@ -61,6 +66,10 @@ export default {
 <style>
 :root {
   --global-font-family: "Poppins", "Helvetica Neue", -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  --global-secundary-font-family: "PT Serif", "Helvetica Neue", -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  --global-footer-font-family: "Montserrat", "Helvetica Neue", -apple-system,
     BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
   --global-font-size: 1rem;
 
