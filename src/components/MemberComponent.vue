@@ -1,8 +1,12 @@
 <template>
-  <div class="relative">
-    <img class="w-9/10" alt="Vue logo" :src="member.img" />
+  <div :class="['relative', `${member.margin}-16`]">
+    <img
+      class="w-5/6 md:w-5/6 xl:w-9/10 mb-4 "
+      alt="Vue logo"
+      :src="member.img"
+    />
     <span
-      class="caption absolute top-0 right-0 -mr-20 origin-top-left transform rotate-90"
+      class="absolute top-0 left-100 transform origin-top-left rotate-90 whitespace-no-wrap uppercase text-sm"
       >{{ member.role }}</span
     >
     <span class="font-bold">{{ member.name }}</span>
@@ -18,8 +22,4 @@ export default {
 // inline-block align-top -ml-20 origin-top-right transform rotate-90 uppercase
 </script>
 
-<style scoped>
-.caption {
-  /* top: 25%; */
-}
-</style>
+<style scoped></style>
