@@ -59,11 +59,6 @@ export default {
       ],
     };
   },
-  methods: {
-    getMember(memberName) {
-      return Object.assign(this.members[memberName], { name: memberName });
-    },
-  },
 };
 </script>
 

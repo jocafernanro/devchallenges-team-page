@@ -19,7 +19,6 @@ export default {
     member: Object,
   },
 };
-// inline-block align-top -ml-20 origin-top-right transform rotate-90 uppercase
 </script>
 
 <style scoped></style>
