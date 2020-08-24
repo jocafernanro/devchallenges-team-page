@@ -1,5 +1,5 @@
 <template>
-  <div :class="['relative', `${member.margin}-16`]">
+  <div :class="['relative', `${margin}-16`]">
     <img
       class="w-5/6 md:w-5/6 xl:w-9/10 mb-4 "
       alt="Vue logo"
@@ -17,6 +17,28 @@
 export default {
   props: {
     member: Object,
+  },
+  data: function() {
+    return {
+      margin: "",
+    };
+  },
+  methods: {
+    setMargin() {
+      this.margin =
+        window.innerWidth <= 762
+          ? this.member.marginMobile
+          : this.member.marginDesktop;
+    },
+  },
+  created() {
+    window.addEventListener("resize", this.setMargin);
+  },
+  destroyed() {
+    window.removeEventListener("resize", this.setMargin);
+  },
+  mounted() {
+    this.setMargin();
   },
 };
 </script>
